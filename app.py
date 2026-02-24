@@ -151,7 +151,7 @@ with col2:
     else:
         rec_maint, rec_tau, rec_label = 100, 8, "1.0 MU q8h"
         if target_daily_dose_MU > 3.0:
-            alert_msg = f"⚠️ **局限性警示：** 理论达标所需日剂量（{target_daily_dose_MU:.2f} MU）已超过常规剂量。超大剂量下面临严峻的急性肾损伤风险，且模型向极高极值外推时误差增加，，请结合临床慎重参考。"
+            alert_msg = f"⚠️ **局限性警示：** 理论达标所需日剂量（{target_daily_dose_MU:.2f} MU）已超过常规剂量。超大剂量下面临严峻的急性肾损伤风险，且模型向极高极值外推时误差增加，请结合临床慎重参考。"
 
     actual_daily_dose_万IU = rec_maint * (24 / rec_tau)
     achieved_auc_mic = actual_daily_dose_万IU / (CL_ind * mic)
