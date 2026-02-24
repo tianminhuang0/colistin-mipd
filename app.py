@@ -174,7 +174,7 @@ with col3:
     auc24_ld = []
     for d in range(3):
         m_no = (t_no >= d*24) & (t_no <= (d+1)*24)
-auc24_no.append(np.trapezoid(conc_no[m_no], t_no[m_no]))
+    auc24_no.append(np.trapezoid(conc_no[m_no], t_no[m_no]))
     
     m_ld = (t_ld >= d*24) & (t_ld <= (d+1)*24)
     auc24_ld.append(np.trapezoid(conc_ld[m_ld], t_ld[m_ld]))
