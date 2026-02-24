@@ -174,10 +174,10 @@ with col3:
     auc24_ld = []
     for d in range(3):
         m_no = (t_no >= d*24) & (t_no <= (d+1)*24)
-        auc24_no.append(np.trapz(conc_no[m_no], t_no[m_no]))
-        
-        m_ld = (t_ld >= d*24) & (t_ld <= (d+1)*24)
-        auc24_ld.append(np.trapz(conc_ld[m_ld], t_ld[m_ld]))
+auc24_no.append(np.trapezoid(conc_no[m_no], t_no[m_no]))
+    
+    m_ld = (t_ld >= d*24) & (t_ld <= (d+1)*24)
+    auc24_ld.append(np.trapezoid(conc_ld[m_ld], t_ld[m_ld]))
 
     # 绘制柱状图 (调整 figsize 高度以适配屏幕)
     fig, ax = plt.subplots(figsize=(7, 3.8))
