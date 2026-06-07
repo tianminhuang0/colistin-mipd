@@ -125,7 +125,7 @@ with col1:
              "(72 \u00d7 Scr in mg/dL). Convert Scr from \u03bcmol/L to mg/dL by dividing by 88.4."
     )
     st.caption("\u26A0\uFE0F Enter CrCL from the **Cockcroft\u2013Gault** equation \u2014 the covariate used "
-               "in model development. eGFR from CKD-EPI/MDRD is not interchangeable.")
+               "in model development.")
     mic = st.selectbox("Pathogen MIC (\u03bcg/mL)", options=[0.25, 0.5, 1.0, 2.0, 4.0, 8.0], index=2)
     apache = st.slider("APACHE II score", min_value=5, max_value=40, value=15, step=1)
 
