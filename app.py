@@ -118,7 +118,14 @@ col1, col2, col3 = st.columns([1.2, 1.3, 2.5], gap="large")
 with col1:
     st.subheader("\U0001F4CB Patient baseline data")
     # Inputs strictly limited to the model's applicable range
-    crcl = st.number_input("Creatinine clearance, CrCL (mL/min)", min_value=10.0, max_value=150.0, value=50.0, step=5.0)
+    crcl = st.number_input(
+        "Creatinine clearance, CrCL (mL/min)",
+        min_value=10.0, max_value=150.0, value=50.0, step=5.0,
+        help="Cockcroft\u2013Gault: CrCL = [(140 \u2212 age) \u00d7 weight(kg) \u00d7 (0.85 if female)] / "
+             "(72 \u00d7 Scr in mg/dL). Convert Scr from \u03bcmol/L to mg/dL by dividing by 88.4."
+    )
+    st.caption("\u26A0\uFE0F Enter CrCL from the **Cockcroft\u2013Gault** equation \u2014 the covariate used "
+               "in model development. eGFR from CKD-EPI/MDRD is not interchangeable.")
     mic = st.selectbox("Pathogen MIC (\u03bcg/mL)", options=[0.25, 0.5, 1.0, 2.0, 4.0, 8.0], index=2)
     apache = st.slider("APACHE II score", min_value=5, max_value=40, value=15, step=1)
 
